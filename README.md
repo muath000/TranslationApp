@@ -1,87 +1,82 @@
 # TranslationApp
 
-[English](#english) | [العربية](#العربية)
+<p align="center">
+  <b>تطبيق ترجمة فوري عصري وخفيف لنظام Windows 11</b><br>
+  <i>A fast, lightweight, and modern translation app built natively for Windows 11</i>
+</p>
+
+<p align="center">
+  <a href="#-العربية">العربية</a> • <a href="#-english">English</a>
+</p>
 
 ---
-
-## English
-
-A fast, lightweight Windows translation app with a native Windows 11 look. Translate between Arabic and English (and more languages) in a clean, modern window.
-
-### Features
-
-- **Native Windows 11 design**: Fluent UI with Mica background, rounded corners, Segoe UI Variable.
-- **Reliable translation**: automatic fallback across three translation sources, so the app keeps working if one fails.
-- **Long texts**: smart splitting for texts up to 5000 characters, respecting paragraphs and sentences.
-- **Automatic text direction**: instant RTL/LTR detection for Arabic and English.
-- **Light and dark themes**: manual, or follow the system.
-- **Arabic and English interface**.
-- **Always on top** pin, and **auto-copy** of the result to the clipboard.
-- **Low memory usage**.
-
-### Download and run
-
-1. Go to [Releases](https://github.com/muath000/TranslationApp/releases) and download `TranslationApp.exe`.
-2. Double-click it. No installation, no .NET needed.
-
-> Windows may show a SmartScreen warning because the file is not code-signed. Click **More info → Run anyway**.
-
-**Requirements:** Windows 10 or 11 (64-bit), internet connection.
-
-> Translation relies on free third-party online services, which may change or have usage limits.
-
-### Build from source
-
-Requires the .NET 9 SDK.
-
-```powershell
-dotnet publish TranslationApp.UI\TranslationApp.UI.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
-```
-
-### Versioning
-
-Semantic Versioning `MAJOR.MINOR.PATCH`: bug fix → `1.0.1`, new feature → `1.1.0`, major change → `2.0.0`.
-
----
-
-## العربية
 
 <div dir="rtl">
 
-تطبيق ترجمة سريع وخفيف لنظام Windows بتصميم Windows 11 الأصلي. يترجم بين العربية والإنجليزية (ولغات أخرى) في نافذة نظيفة وعصرية.
+## 🇸🇦 العربية
 
-### المميزات
+تطبيق ترجمة سريع وخفيف لنظام Windows بتصميم أصلي يحاكي لغة Windows 11 الحديثة. يتيح الترجمة بين العربية والإنجليزية ولغات متعددة عبر نافذة أنيقة أو مساعد عائم سريع.
 
-- **تصميم Windows 11 الأصلي**: واجهة Fluent مع خلفية Mica وحواف دائرية وخط Segoe UI Variable.
-- **ترجمة موثوقة**: تبديل تلقائي بين ثلاثة مصادر للترجمة، فيستمر التطبيق بالعمل إذا تعطل أحدها.
-- **النصوص الطويلة**: تقسيم ذكي للنصوص حتى 5000 حرف مع احترام الفقرات والجمل.
-- **اتجاه النص تلقائيًا**: كشف فوري لاتجاه العربية والإنجليزية (RTL/LTR).
-- **ثيم فاتح وداكن**: يدويًا أو حسب النظام.
-- **واجهة بالعربية والإنجليزية**.
-- **تثبيت النافذة فوق النوافذ** و**نسخ النتيجة تلقائيًا** إلى الحافظة.
-- **استهلاك منخفض للذاكرة**.
+### ✨ المميزات الرئيسية
 
-### التحميل والتشغيل
+- **تصميم Windows 11 الأصلي:** واجهة Fluent حديثة مع تأثيرات Mica وحواف دائرية وتكامل كامل مع خط نظام ويندوز (Segoe UI Variable).
+- **ترجمة موثوقة وفورية:** تبديل تلقائي ذكي بين ثلاثة مصادر للترجمة لضمان استمرارية الخدمة وسرعة الاستجابة.
+- **معالجة النصوص الطويلة:** تقسيم ذكي وتلقائي للنصوص التي تصل حتى 5000 حرف مع الحفاظ على ترابط الجمل والفقرات.
+- **الكشف التلقائي للاتجاه:** تحديد ذكي وفوري لاتجاه النص (من اليمين لليسار RTL أو من اليسار لليمين LTR).
+- **التكيف مع مظهر النظام:** دعم كامل للوضعين الداكن والفاتح تلقائياً بحسب إعدادات ويندوز أو يدوياً.
+- **أدوات الإنتاجية:** إمكانية تثبيت النافذة في المقدمة (Always on Top)، والنسخ التلقائي للنصوص المترجمة، ومساعد عائم سريع.
+- **أداء خفيف واستقلالية:** لا يتطلب أي تثبيت، ويعمل باستهلاك منخفض جداً لموارد الذاكرة والمعالج.
 
-1. ادخل على [Releases](https://github.com/muath000/TranslationApp/releases) وحمّل `TranslationApp.exe`.
-2. شغّله بنقرتين. لا يحتاج تثبيت ولا .NET.
+### 🚀 التحميل والتشغيل السريع
 
-> قد يظهر تحذير SmartScreen لأن الملف غير موقّع رقميًا. اضغط **More info ← Run anyway**.
+1. توجّه إلى صفحة **[الإصدارات (Releases)](https://github.com/muath000/TranslationApp/releases/latest)**.
+2. حمّل الملف التنفيذي المباشر **`TranslationApp.exe`**.
+3. شغّل الملف بنقرتين فوراً دون الحاجة لأي تثبيت أو تحميل برامج إضافية.
 
-**المتطلبات:** Windows 10 أو 11 (64-bit)، واتصال بالإنترنت.
+> **ملاحظة حول نظام الحماية:** نظراً لأن التطبيق مفتوح المصدر ومستقل، قد تظهر رسالة التنبيه الزرقاء من نظام Windows SmartScreen عند التشغيل لأول مرة؛ اضغط على **المزيد من المعلومات (More info)** ثم **تشغيل على أي حال (Run anyway)**.
 
-> الترجمة تعتمد على خدمات مجانية خارجية، وقد تتغير أو يكون لها حدود استخدام.
+### 💻 متطلبات النظام
 
-### البناء من المصدر
+- **نظام التشغيل:** Windows 10 (إصدار 64-bit برقم بناء 19041 فأحدث) أو Windows 11.
+- **الاتصال:** اتصال نشط بالإنترنت لخدمات الترجمة.
 
-يتطلب .NET 9 SDK.
+---
 
-```powershell
-dotnet publish TranslationApp.UI\TranslationApp.UI.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true
-```
-
-### الإصدارات
-
-الترقيم `MAJOR.MINOR.PATCH`: إصلاح خطأ ← `1.0.1`، ميزة جديدة ← `1.1.0`، تغيير كبير ← `2.0.0`.
+👨‍💻 **للمطورين والمساهمة:**  
+إذا كنت ترغب في بناء المشروع من المصدر أو المساهمة في تطويره، يُرجى مراجعة **[دليل المساهمة (CONTRIBUTING.md)](CONTRIBUTING.md)**.
 
 </div>
+
+---
+
+## 🌐 English
+
+A fast, lightweight, and modern translation application designed with a native Windows 11 Fluent experience. Translate seamlessly between Arabic, English, and other languages in an elegant desktop interface.
+
+### ✨ Key Features
+
+- **Native Windows 11 Design:** Fluent UI with Mica background effects, smooth rounded corners, and official Segoe UI Variable typography.
+- **Reliable Translation:** Smart automatic fallback between three translation sources to guarantee uninterrupted service.
+- **Long Text Processing:** Intelligent text splitting for up to 5,000 characters while preserving sentence and paragraph integrity.
+- **Instant Direction Detection:** Automatic bidirectional layout adaptation (RTL for Arabic, LTR for English).
+- **Theme Adaptation:** Seamless support for Light and Dark modes matching your Windows system preferences.
+- **Productivity Utilities:** Always-on-top window pinning, automatic clipboard copy, and a quick floating translation flyout.
+- **Zero Installation & Portable:** Single self-contained executable with low RAM and CPU footprint.
+
+### 🚀 Download & Quick Start
+
+1. Go to the **[Latest Release](https://github.com/muath000/TranslationApp/releases/latest)** page.
+2. Download the standalone executable: **`TranslationApp.exe`**.
+3. Double-click to run immediately — no installation or extra runtimes required.
+
+> **SmartScreen Notice:** As this is an open-source portable application, Windows SmartScreen may present a protection prompt on first launch. Simply click **More info** and then select **Run anyway**.
+
+### 💻 System Requirements
+
+- **OS:** Windows 10 (64-bit, Build 19041 or higher) or Windows 11.
+- **Network:** Active internet connection for online translations.
+
+---
+
+👨‍💻 **For Developers & Contributors:**  
+To build the application from source or contribute to its development, please refer to the **[Contribution Guide (CONTRIBUTING.md)](CONTRIBUTING.md)**.

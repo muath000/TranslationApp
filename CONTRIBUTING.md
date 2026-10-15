@@ -24,6 +24,9 @@ dotnet build -c Release
 
 # تشغيل الاختبارات الآلية (يجب اجتياز كافة الاختبارات)
 dotnet test -c Release
+
+# إنتاج الملف التنفيذي المستقل (Single-File Exe)
+dotnet publish TranslationApp.UI\TranslationApp.UI.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true -o .\Publish\v1.0.0
 ```
 
 ### 3. المعمارية ودستور التطوير
@@ -48,6 +51,12 @@ dotnet test -c Release
 3. التزم بعدم تعديل أي ملفات لا تتعلق بطلب السحب الخاص بك.
 4. افتح Pull Request موضحاً التغييرات بوضوح، واربطه برقم المشكلة (Issue) المتعلقة إن وجدت.
 
+### 6. نظام ترقيم الإصدارات (Semantic Versioning)
+يتبع المشروع معيار `MAJOR.MINOR.PATCH`:
+- **PATCH** (مثل `1.0.1`): لإصلاح الأخطاء الطفيفة والتحسينات السريعة.
+- **MINOR** (مثل `1.1.0`): لإضافة ميزات جديدة متوافقة مع الإصدارات السابقة.
+- **MAJOR** (مثل `2.0.0`): للتغييرات المعمارية الجذرية أو غير المتوافقة.
+
 ---
 
 <a name="contributing-guidelines-english"></a>
@@ -71,6 +80,9 @@ dotnet build -c Release
 
 # Run automated tests (all tests must pass)
 dotnet test -c Release
+
+# Publish standalone single-file executable
+dotnet publish TranslationApp.UI\TranslationApp.UI.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true -o .\Publish\v1.0.0
 ```
 
 ### 3. Architecture & Guidelines
@@ -94,3 +106,9 @@ Please follow the standard commit convention:
 2. Ensure tests pass locally: `dotnet test -c Release`.
 3. Keep changes atomic and directly relevant to the issue/feature.
 4. Submit the Pull Request with a clear description of changes.
+
+### 6. Semantic Versioning
+This project follows `MAJOR.MINOR.PATCH`:
+- **PATCH** (e.g. `1.0.1`): Bug fixes and minor maintenance.
+- **MINOR** (e.g. `1.1.0`): Backward-compatible new features.
+- **MAJOR** (e.g. `2.0.0`): Breaking architectural or functional changes.
