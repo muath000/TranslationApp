@@ -1,0 +1,34 @@
+# Directories
+bin/
+obj/
+.vs/
+.vscode/
+
+# Ignore massive ONNX models (they should be downloaded separately)
+models/
+*.onnx
+*.spm
+
+# User-specific files
+*.user
+*.suo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# أسرار وإعدادات محلية
+appsettings.*.local.json
+.env
+
+# شهادات ومفاتيح
+*.pfx
+*.key
+
+# سجلات
+*.log
+
+# نتائج الاختبارات والنشر
+TestResults/
+[Pp]ublish/
+*.zip

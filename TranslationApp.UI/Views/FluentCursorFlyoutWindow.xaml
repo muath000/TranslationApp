@@ -1,0 +1,113 @@
+<Window x:Class="TranslationApp.UI.Views.FluentCursorFlyoutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:TranslationApp.UI.Controls"
+        Title="Quick Translation"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        Topmost="True"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        SnapsToDevicePixels="True"
+        UseLayoutRounding="True">
+
+    <Window.Resources>
+        <!-- ظل ناعم مطابق لنوافذ ويندوز 11 المنبثقة -->
+        <DropShadowEffect x:Key="FluentFlyoutShadow" BlurRadius="20" ShadowDepth="4" Opacity="0.45" Color="#000000"/>
+    </Window.Resources>
+
+    <Grid Margin="12">
+        <!-- 1. نمط الكبسولة الذكية (Pill Mode) -->
+        <Border x:Name="PillContainer"
+                Background="{DynamicResource CardBackgroundBrush}"
+                BorderBrush="{DynamicResource CardBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="18"
+                Effect="{StaticResource FluentFlyoutShadow}"
+                Padding="6,4,6,4"
+                Visibility="Visible">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <!-- زر النقر للترجمة الفورية -->
+                <Button x:Name="PillActionButton" 
+                        Background="Transparent" BorderThickness="0" Cursor="Hand"
+                        Click="PillActionButton_Click" Margin="2,0,4,0">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Border Width="24" Height="24" CornerRadius="12" Background="{DynamicResource SystemAccentBrush}" Margin="0,0,6,0">
+                            <TextBlock Text="&#xE8BD;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" Foreground="White" FontSize="11" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <TextBlock Text="ترجمة؟" Foreground="{DynamicResource TextPrimaryBrush}" FontSize="13" FontWeight="SemiBold" FontFamily="Segoe UI Variable, Segoe UI" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- زر الإغلاق السريع للكبسولة -->
+                <Button x:Name="PillCloseButton" Click="CloseButton_Click"
+                        Width="22" Height="22" Background="Transparent" BorderThickness="0" Cursor="Hand" Margin="2,0,2,0">
+                    <TextBlock Text="&#xE8BB;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="9" Foreground="{DynamicResource TextSecondaryBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!-- 2. نمط البطاقة المصغرة للترجمة الفورية (Mini Card Mode) -->
+        <Border x:Name="MiniCardContainer"
+                Width="320" MaxHeight="240"
+                Background="{DynamicResource CardBackgroundBrush}"
+                BorderBrush="{DynamicResource CardBorderBrush}"
+                BorderThickness="1"
+                CornerRadius="12"
+                Effect="{StaticResource FluentFlyoutShadow}"
+                Padding="12"
+                Visibility="Collapsed">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <!-- رأس البطاقة: تبديل اللغات والإغلاق -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- النص المترجم -->
+                    <RowDefinition Height="*"/>
+                    <!-- شريط أدوات البطاقة -->
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- رأس البطاقة -->
+                <Grid Grid.Row="0" Margin="0,0,0,8">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Border Background="{DynamicResource ControlBackgroundBrush}" CornerRadius="4" Padding="6,2">
+                            <TextBlock x:Name="LanguagePairTextBlock" Text="العربية ➔ English" FontSize="11" Foreground="{DynamicResource TextSecondaryBrush}" FontFamily="Segoe UI Variable, Segoe UI"/>
+                        </Border>
+                    </StackPanel>
+
+                    <Button x:Name="CardCloseButton" Click="CloseButton_Click"
+                            Width="26" Height="24" HorizontalAlignment="Right" Background="Transparent" BorderThickness="0" Cursor="Hand">
+                        <TextBlock Text="&#xE8BB;" FontFamily="Segoe Fluent Icons, Segoe MDL2 Assets" FontSize="10" Foreground="{DynamicResource TextSecondaryBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Button>
+                </Grid>
+
+                <!-- محتوى النص المترجم -->
+                <ScrollViewer Grid.Row="1" MaxHeight="130" VerticalScrollBarVisibility="Auto" Margin="0,0,0,10">
+                    <TextBlock x:Name="TranslatedResultTextBlock" 
+                               Text="جاري الترجمة..." 
+                               TextWrapping="Wrap"
+                               Foreground="{DynamicResource TextPrimaryBrush}"
+                               FontSize="14" LineHeight="20"
+                               FontFamily="Segoe UI Variable, Segoe UI"/>
+                </ScrollViewer>
+
+                <!-- شريط أزرار الإجراءات السريعة -->
+                <Grid Grid.Row="2">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <!-- زر نسخ الترجمة -->
+                        <controls:FluentButtonBase x:Name="CopyResultButton" Icon="&#xE8C8;" ToolTip="نسخ الترجمة" Width="30" Height="28" Click="CopyResultButton_Click" Margin="0,0,4,0"/>
+                        <!-- زر نطق الترجمة (معطل مؤقتاً) -->
+                        <controls:FluentButtonBase x:Name="SpeakResultButton" Icon="&#xE768;" ToolTip="استماع" Width="30" Height="28" Visibility="Collapsed" Click="SpeakResultButton_Click" Margin="0,0,4,0"/>
+                        <!-- زر فتح في التطبيق الكامل -->
+                        <controls:FluentButtonBase x:Name="OpenInAppButton" Icon="&#xE8A7;" ToolTip="فتح في التطبيق الرئيسي" Width="30" Height="28" Click="OpenInAppButton_Click"/>
+                    </StackPanel>
+
+                    <!-- إشعار النسخ الخفيف -->
+                    <TextBlock x:Name="CopiedToastTextBlock" Text="تم النسخ ✓" FontSize="11" Foreground="{DynamicResource SystemAccentBrush}" HorizontalAlignment="Right" VerticalAlignment="Center" Visibility="Collapsed"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
