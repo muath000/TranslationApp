@@ -45,6 +45,11 @@
 👨‍💻 **للمطورين والمساهمة:**  
 إذا كنت ترغب في بناء المشروع من المصدر أو المساهمة في تطويره، يُرجى مراجعة **[دليل المساهمة (CONTRIBUTING.md)](CONTRIBUTING.md)**.
 
+### 🤍 شكر وتقدير
+
+تم بناء وتطوير هذا التطبيق داخل بيئة العمل **Antigravity** بواسطة نموذج الذكاء الاصطناعي **Gemini 3 Pro**.  
+خالص الشكر والتقدير لشركة **Google** وفريق **Google DeepMind** على توفير هذه البيئة التقنية الرائدة وأحدث نماذج الذكاء الاصطناعي التي جعلت تطوير هذا المشروع حقيقة بأعلى درجات الدقة والسرعة.
+
 </div>
 
 ---
@@ -80,3 +85,8 @@ A fast, lightweight, and modern translation application designed with a native W
 
 👨‍💻 **For Developers & Contributors:**  
 To build the application from source or contribute to its development, please refer to the **[Contribution Guide (CONTRIBUTING.md)](CONTRIBUTING.md)**.
+
+### 🤍 Acknowledgements
+
+This application was engineered and developed within the **Antigravity** development environment powered by the **Gemini 3 Pro** model.  
+Special thanks and deep gratitude to **Google** and the **Google DeepMind** team for providing the state-of-the-art AI capabilities and tools that empowered the creation of this project.
